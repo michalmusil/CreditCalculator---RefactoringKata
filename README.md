@@ -1,0 +1,11 @@
+# What I think is wrong and what would I do to fix it (roughly)
+- Whole codebase is contained inside one project - no separation of concerns, tight coupling, no abstractions, just direct implementations
+    - Would separate into Domain, Application and Infrastructure
+- Would introduce DI
+- Company model is not very nice
+    - Contains mock values, which should be declared in Mock implementation of Company repo
+    - Type is just a string
+- Entire company service BL just in one method (should be separated)
+    - Validation (would implement as separate builder-style validator for customer)
+    - Repository instantiated inside method
+    - Would separate company type handling into separate factory returning different handlers according to type
